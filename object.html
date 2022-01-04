@@ -9,10 +9,18 @@
   <body>
     <!-- Cara membuat object versi sebelum es 6 -->
     <script>
-      function Person() {}
+      function Person() {
+        this.firstName = "";
+        this.lastName = "";
+      }
 
       const budi = new Person();
+      budi.firstName = "Budi";
+      budi.lastName = "Ekapaksi";
       const anto = new Person();
+
+      console.log(budi);
+      console.log(anto);
     </script>
   </body>
 </html>
