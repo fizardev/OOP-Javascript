@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <script>
+      // Parameter on Constructor Function
+      function Person(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.sayHello = function (name) {
+          console.info(`Hello ${name}, My name is ${this.firstName}`);
+        };
+      }
+
+      Person.prototype.sayBye = function (name) {
+        console.info(`Good bye ${name} from ${this.firstName}`);
+      };
+
+      const eko = new Person("Eko", "Prasetyo");
+
+      console.log(eko.sayHello("Fizar"));
+      console.log(eko.sayBye("Fizar"));
+    </script>
+  </body>
+</html>
