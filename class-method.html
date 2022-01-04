@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Constructor</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(name) {
+          this.name = name;
+
+          //jika method diletakkan disini
+          //maka akan masuk ke instance objeknya bukan ke prototype
+        }
+
+        //method baiknya ditaruh
+        //di prototype di ketik di luar constructor
+
+        sayHallo(name) {
+          console.info(`Hello ${name}, nama saya ${this.name}`);
+        }
+      }
+
+      const Fizar = new Person("Fizar Rama");
+      Fizar.sayHallo("Joko");
+    </script>
+  </body>
+</html>
