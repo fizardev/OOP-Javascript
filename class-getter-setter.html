@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getter dan Setter</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(firstname, lastname) {
+          this.firstname = firstname;
+          this.lastname = lastname;
+        }
+
+        get fullName() {
+          console.info(`${this.firstname} ${this.lastname}`);
+        }
+
+        set fullName(value) {
+          const name = value.split(" ");
+          this.firstname = name[0];
+          this.lastname = name[1];
+        }
+      }
+      const fizar = new Person("Fizar", "Rama");
+      console.info(fizar);
+      fizar.fullName;
+
+      fizar.fullName = "Fizar Waluyo";
+      console.info(fizar);
+    </script>
+  </body>
+</html>
