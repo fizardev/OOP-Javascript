@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Method Private</title>
+  </head>
+  <body>
+    <script>
+      class Message {
+        say(name) {
+          if (name) {
+            this.#sayWithName(name);
+          } else {
+            this.#sayWithoutName();
+          }
+        }
+        #sayWithName(name) {
+          console.info(`Hello ${name}`);
+        }
+        #sayWithoutName() {
+          console.info(`Hello User`);
+        }
+      }
+
+      const message = new Message();
+      message.say();
+    </script>
+  </body>
+</html>
