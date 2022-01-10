@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator Instanceof</title>
+  </head>
+  <body>
+    <script>
+      class Employee {}
+      class Manager extends Employee {}
+
+      /*
+            instanceof berguna untuk mengecek apakah
+            object tersebut instance dari class yang ditunjukan
+            atau object tersebut merupakan turunan dari class yang
+            ditunjukan
+        */
+
+      const fizar = new Employee();
+      const budi = new Manager();
+
+      console.info(typeof fizar);
+      console.info(typeof budi);
+
+      console.info(fizar instanceof Employee); //true
+      console.info(fizar instanceof Manager); //false
+      console.info(budi instanceof Employee); //true
+      console.info(budi instanceof Manager); //true
+    </script>
+  </body>
+</html>
