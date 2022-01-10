@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class: Public Field</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        //Sejajar dengan method, tidak didalam constructor
+        firstName = "Fizar Rama";
+        lastName = "Waluyo";
+      }
+
+      const fizar = new Person();
+      console.info(`${fizar.firstName} ${fizar.lastName}`);
+      fizar.firstName = "Fizar";
+      console.info(`${fizar.firstName} ${fizar.lastName}`);
+      const zaka = new Person();
+      zaka.firstName = "Muhammad Zaka";
+      zaka.lastName = "Purnama";
+      console.info(`${zaka.firstName} ${zaka.lastName}`);
+    </script>
+  </body>
+</html>
