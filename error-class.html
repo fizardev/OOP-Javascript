@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error - Handling</title>
+  </head>
+  <body>
+    <script>
+      class MathUtil {
+        sum(...numbers) {
+          if (numbers.length == 0) {
+            //Pembuatan error
+            throw new ValidationError("Number harus lebih dari 0", "numbers");
+          }
+          let hasil = 0;
+          for (const number of numbers) {
+            hasil += number;
+          }
+
+          return hasil;
+        }
+      }
+      class ValidationError extends Error {
+        constructor(message, field) {
+          super(message);
+          this.field = field;
+        }
+      }
+      const sums = new MathUtil();
+
+      try {
+        console.log(sums.sum());
+        console.info("Fizar");
+        //   console.log(sums.sum(1, 2, 3, 4, 5));
+      } catch (error) {
+        if (error instanceof ValidationError) {
+          console.error(`Error : ${error.message}`);
+          console.error(`Field : ${error.field}`);
+        } else {
+          console.error(`Terjadi Error: ${error.message}`);
+        }
+      }
+      console.info("Porgram tetap jalan");
+    </script>
+  </body>
+</html>
