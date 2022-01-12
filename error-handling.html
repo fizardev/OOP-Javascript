@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error - Handling</title>
+  </head>
+  <body>
+    <script>
+      class MathUtil {
+        sum(...numbers) {
+          if (numbers.length == 0) {
+            //Pembuatan error
+            throw new Error("Number harus lebih dari 0");
+          }
+          let hasil = 0;
+          for (const number of numbers) {
+            hasil += number;
+          }
+
+          return hasil;
+        }
+      }
+      const sums = new MathUtil();
+
+      try {
+        console.log(sums.sum());
+        console.info("Fizar");
+        //   console.log(sums.sum(1, 2, 3, 4, 5));
+      } catch (error) {
+        console.error(`Terjadi Error: ${error.message}`);
+      }
+      console.info("Porgram tetap jalan");
+
+      class Counter {
+        #counter = 0;
+        next() {
+          try {
+            return this.#counter++;
+          } finally {
+            //block finally akan terus dijalankan setelah try atau catch
+            this.#counter++;
+          }
+        }
+      }
+
+      const counter = new Counter();
+      console.info(counter.next());
+      console.info(counter.next());
+      console.info(counter.next());
+      console.info(counter.next());
+      console.info(counter.next());
+    </script>
+  </body>
+</html>
